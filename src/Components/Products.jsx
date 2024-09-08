@@ -7,7 +7,7 @@ export function Products(){
   const { cart, dispatch } = useGlobalContext()
   if(cart.totalQuantity > 0){
     return (
-     <div className="w-[90%] grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-7 mx-auto mt-30 shadow-md relative">
+     <div className="w-[90%] grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-7 mx-auto mt-20 shadow-md relative">
         {
           cart.cartItems.map(item=><Product {...item} dispatch={dispatch}/>)
        }
