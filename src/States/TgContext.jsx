@@ -18,6 +18,8 @@ export function TgProvider({children}){
         dispatch({type: "SET_IS_INITIALIZED"})
         const tg = new TelegramWebAppWrapper(TGD)
         tg.expand()
+        tg.showMainButton()
+        tg.setMainButtonText("Checkouts")
       } else{
         dispatch({type: "UNSET_IS_INITIALIZED"})
       }
