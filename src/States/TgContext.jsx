@@ -16,7 +16,7 @@ export function TgProvider({children}){
       if(tg.initData && tg.initDataUnsafe && tg.initDataUnsafe.user){  
         dispatch({type: "SET_IS_INITIALIZED"})
         tg.expand()
-        tg.headerColor = "#000"
+        //tg.headerColor = "#000"
         tg.showMainButton()
         tg.setMainButtonText("Checkouts")
       } else{
