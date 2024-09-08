@@ -8,7 +8,7 @@ export function Cart({id, image, productName, price, quantity, dispatch}){
         <h1 className="font-light text-center">{productName}</h1>
         <h1 className="font-extrabold">$ {(price * quantity).toFixed(0)}</h1>
         <h1 className="font-bold">x{quantity}</h1>
-        <button className="bg-red-600 px-[7px]  rounded text-white outline-0 my-2 text-2xl" onClick={()=>dispatch({type: "REMOVE_FROM_CART", payload: id})}>×</button>
+        <button className="bg-black border-[1px] border-white px-[7px] rounded text-white outline-0 my-2 text-2xl" onClick={()=>dispatch({type: "REMOVE_FROM_CART", payload: id})}>×</button>
        </div>
      </div>
     )
