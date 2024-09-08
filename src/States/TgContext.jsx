@@ -1,7 +1,6 @@
 import { createContext, useContext, useReducer, useEffect } from "react";
 import { tgReducer } from "./TgReducer";
 import axios from "axios";
-import TelegramWebAppWrapper from "./TgWebAppClass";
 
 const TgContext = createContext();
 
@@ -12,12 +11,12 @@ export function TgProvider({children}){
   })
   
   useEffect(()=>{
-    const TGD = state.TG;
+    const tg = state.TG;
     const initialize = ()=>{
-      if(TGD.initData && TGD.initDataUnsafe && TGD.initDataUnsafe.user){  
+      if(tg.initData && tg.initDataUnsafe && tg.initDataUnsafe.user){  
         dispatch({type: "SET_IS_INITIALIZED"})
-        const tg = new TelegramWebAppWrapper(TGD)
         tg.expand()
+        tg.headerColor = "#000"
         tg.showMainButton()
         tg.setMainButtonText("Checkouts")
       } else{

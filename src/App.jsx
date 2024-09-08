@@ -24,7 +24,7 @@ export const App = memo(()=>{
     return <h1 className="text-center text-2xl font-extrabold">Open the bot in Telegram</h1>
   }
   return (
-    <div className="bg-gray-100">
+    <div className="bg-black text-white">
       <AppProvider>
         <Navbar/>
         <Router/>
