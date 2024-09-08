@@ -13,14 +13,14 @@ export const App = memo(()=>{
   useEffect(()=>{
      setTimeout(()=>{
        setLoading(false)
-     }, 4000)
+     }, 1000)
   }, [])
   if(loading){
     return <div className="flex items-center justify-center h-screen">
       <h1 className="text-7xl animate-spin text-blue-600"><ImSpinner/></h1>
     </div>
   }
-  if(!state.isInitialized){
+  if(state.isInitialized === false){
     return <h1 className="text-center text-2xl font-extrabold">Open the bot in Telegram</h1>
   }
   return (
