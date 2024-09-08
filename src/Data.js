@@ -4,7 +4,7 @@ export const data = [
     productName: "Laptop",
     price: 899.99,
     quantity: 0, 
-    image: "/apple-1282241_1280.jpg"
+    image: "apple-1282241_1280.jpg"
   },
   {
     id: 2,
