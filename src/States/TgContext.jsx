@@ -17,8 +17,6 @@ export function TgProvider({children}){
         const tg = new TelegramWebAppWrapper(state.TG)
         dispatch({type: "SET_IS_INITIALIZED"})
         tg.expand()
-        const userId = tg.initDataUnsafe.user.id;
-        const initData = tg.initData;
       } else{
         dispatch({type: "UNSET_IS_INITIALIZED"})
       }
