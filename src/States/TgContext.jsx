@@ -12,10 +12,9 @@ export function TgProvider({children}){
   })
   
   useEffect(()=>{
-    const tg = new TelegramWebAppWrapper(state.TG)
-    
     const initialize = ()=>{
-      if(tg.initData && tg.initDataUnsafe && tg.initDataUnsafe.user){  
+      if(state.TG.initData && state.TG.initDataUnsafe && state.TG.initDataUnsafe.user){  
+        const tg = new TelegramWebAppWrapper(state.TG)
         dispatch({type: "SET_IS_INITIALIZED"})
         tg.expand()
         const userId = tg.initDataUnsafe.user.id;
