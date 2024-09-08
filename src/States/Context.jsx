@@ -10,7 +10,7 @@ export function AppProvider({children}){
   useEffect(()=>{
     dispatch({type: "TOTAL_ITEMS"})
   }, [cart.cartItems])
-  localStorage.clear()
+  
   useEffect(()=>{
     localStorage.setItem("Carts.App", JSON.stringify(cart.cartItems))
   }, [cart.cartItems])
