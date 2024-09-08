@@ -17,6 +17,7 @@ export function TgProvider({children}){
         dispatch({type: "SET_IS_INITIALIZED"})
         tg.expand()
         tg.headerColor = "#000"
+        tg.enableClosingConfirmation()
       } else{
         dispatch({type: "UNSET_IS_INITIALIZED"})
       }
