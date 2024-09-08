@@ -13,6 +13,7 @@ export function TgProvider({children}){
   
   useEffect(()=>{
     const tg = state.TG;
+    alert(JSON.stringify(state.TG.initData))
     const initialize = ()=>{
       if(tg.initData && tg.initDataUnsafe && tg.initDataUnsafe.user){  
         dispatch({type: "SET_IS_INITIALIZED"})
