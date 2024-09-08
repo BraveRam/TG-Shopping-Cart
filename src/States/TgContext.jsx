@@ -19,6 +19,7 @@ export function TgProvider({children}){
         tg.expand()
         const userId = tg.initDataUnsafe.user.id;
         const initData = tg.initData;
+      } else{
         dispatch({type: "UNSET_IS_INITIALIZED"})
       }
     }

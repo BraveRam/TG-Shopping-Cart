@@ -20,7 +20,7 @@ export const App = memo(()=>{
       <h1 className="text-7xl animate-spin text-blue-600"><ImSpinner/></h1>
     </div>
   }
-  if(state.isInitialized === false){
+  if(!state.isInitialized){
     return <h1 className="text-center text-2xl font-extrabold">Open the bot in Telegram</h1>
   }
   return (
