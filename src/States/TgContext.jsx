@@ -1,6 +1,7 @@
 import { createContext, useContext, useReducer, useEffect } from "react";
 import { tgReducer } from "./TgReducer";
 import axios from "axios";
+import TelegramWebAppWrapper from "./TgWebAppClass";
 
 const TgContext = createContext();
 
@@ -11,7 +12,7 @@ export function TgProvider({children}){
   })
   
   useEffect(()=>{
-    const tg = state.TG
+    const tg = new TelegramWebAppWrapper(state.TG)
     
     const initialize = ()=>{
       if(tg.initData && tg.initDataUnsafe && tg.initDataUnsafe.user){  
