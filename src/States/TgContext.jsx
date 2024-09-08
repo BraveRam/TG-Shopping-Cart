@@ -8,13 +8,13 @@ const TgContext = createContext();
 export function TgProvider({children}){
   const [state, dispatch] = useReducer(tgReducer, {
     isInitialized: false,
-    TG: window.Telegram?.WebApp || ""
+    TG: new TelegramWebAppWrapper(window.Telegram?.WebApp || "")
   })
   
   useEffect(()=>{
+    const tg = state.TG;
     const initialize = ()=>{
-      if(state.TG.initData && state.TG.initDataUnsafe && state.TG.initDataUnsafe.user){  
-        const tg = new TelegramWebAppWrapper(state.TG)
+      if(tg.initData && tg.initDataUnsafe && tg.initDataUnsafe.user){  
         dispatch({type: "SET_IS_INITIALIZED"})
         tg.expand()
       } else{

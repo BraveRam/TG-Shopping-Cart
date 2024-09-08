@@ -51,6 +51,14 @@ class TelegramWebAppWrapper {
   expand() {
     this.webApp.expand();
   }
+  
+  initData(){
+    return this.webApp.initData;
+  }
+  
+  initDataUnSafe(){
+    return this.webApp.initDataUnSafe;
+  }
 
   // Enable closing confirmation
   enableClosingConfirmation() {
